@@ -1,0 +1,460 @@
+body {
+    font-family: 'Sitka Display', NSimSun, 'sans-serif';
+    background-image: url(/img/background/bcc.png);
+    height: 100vh;
+    position: relative;
+}
+
+h2 {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+h5 {
+    font-weight: 600;
+}
+
+h6 {
+    /* font-style: 12px; */
+    font-weight: normal;
+}
+
+p {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 32px;
+}
+
+nav {
+    position: unset;
+}
+
+.lucky_Swipe_page {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.lucky_Swipe_page ul {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.lucky_Swipe_page li {
+    width: 20px;
+    height: 4px;
+    background-color: rgb(148, 148, 148);
+}
+
+.lucky_Swipe_page .stageColor {
+    background-color: #cc543a;
+}
+
+.lucky_contianer {
+    margin: 0;
+    padding: 30px 0 0 80px;
+    height: 80%;
+    overflow: hidden;
+}
+
+.lucky_content01 {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    position: relative;
+}
+
+.item-group01 {
+    height: 100%;
+    margin-left: 70px;
+    width: 100px;
+}
+
+.lucky_content01 h3 {
+    margin-top: 25px;
+}
+
+.lucky_row {
+    width: 40%;
+    position: relative;
+}
+
+.lucky_Sign_order {
+    position: absolute;
+    top: 0;
+}
+
+/* 選擇神明 */
+.lucky_p1,
+.lucky_Search_gods {
+    width: 100%;
+    padding-top: 5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.lucky_p2 h4 {
+    margin-bottom: 30px;
+}
+
+.lucky_p2 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 5vh;
+}
+
+.lucky_p3 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.lucky_p4 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 5vh;
+}
+
+.lucky_p501,
+.lucky_p502,
+.lucky_p503 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 15vh;
+}
+
+.lucky_p6 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding-top: 7vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.nextstep {
+    display: none;
+}
+
+select {
+    border-style: none;
+    border-bottom: 2px solid rgb(66, 65, 65);
+    font-size: 22px;
+    color: dimgray;
+    background-color: transparent;
+    width: 100%;
+}
+
+option {
+    font-size: 20px;
+}
+
+.lucky_God_speaks {
+    width: 70%;
+    height: 150px;
+    align-self: flex-start;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.lucky_God_speaks h5 {
+    padding-top: 30px;
+    padding-left: 50px;
+    line-height: 30px;
+}
+
+.lucky_God_speaks .lucky_round {
+    position: absolute;
+    top: 0;
+    left: -25px;
+    z-index: -50;
+}
+
+.lucky_right {
+    width: 80%;
+    align-self: flex-end;
+    position: relative;
+}
+
+.lucky_round {
+    width: 150px;
+}
+
+.lucky_row img {
+    width: 100%;
+}
+
+.lucky_Search_gods {
+    padding: 20px 0;
+}
+
+.lucky_Request_signature h3 {
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.lucky_Request_signature p {
+    font-size: 20px;
+    line-height: 36px;
+}
+
+/* 跳轉按鈕 */
+.lucky_button01 button {
+    width: 150px;
+    height: fit-content;
+    border-radius: 30px;
+    color: #fff;
+    background-color: #cc543a;
+    border-style: none;
+    padding: 8px 30px;
+    font-size: 20px;
+}
+
+.lucky_button01 {
+    position: absolute;
+    bottom: 17%;
+}
+
+/* 固定背景神明圖 */
+.lucky_GodImg {
+    width: 30%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    position: relative;
+}
+
+.lucky_GodImg img {
+    width: 100%;
+    object-fit: contain;
+    opacity: 0.5;
+    position: absolute;
+    right: 0;
+    transform: translateY(5%);
+}
+
+.lucky_icon_row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+
+}
+
+.lucky_icon_row02 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 55px;
+    margin-bottom: 30px;
+
+}
+
+.icon {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    /* margin-top: 0px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.icon_01 img {
+    width: 60%;
+}
+
+.icon_02 img {
+    width: 50%;
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    background-color: #fff;
+    border: 1px solid #cc5436;
+    border-radius: 50%;
+    /* margin-top: 55px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.icon_60 img {
+    width: 60%;
+}
+
+.icon_50 img {
+    width: 50%;
+}
+
+.icon_40 img {
+    width: 40%;
+}
+
+.icon_01 img {
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.icon_02 img {
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+.icon_03 img {
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+.icon_04 img {
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+
+.lucky_icon_text {
+    width: 130px;
+    text-align: center;
+    line-height: 22px;
+
+}
+
+.lucky_Sign_animation03 {
+    width: 25%;
+    margin: 0 auto;
+}
+
+.lucky_Sign_animation03 img {
+    width: 100%;
+}
+
+.lucky_text15 {
+    transform: translate(105px, 80px);
+    color: #fff;
+}
+
+.lucky_result {
+    display: flex;
+    justify-content: flex-end;
+    transform: translateY(-100%);
+}
+
+.lucky_Sign_animation05_1 {
+    width: 80%;
+    position: relative;
+}
+
+.lucky_Sign_animation05_1 img {
+    width: 100%;
+    transform: rotate(-30deg);
+}
+
+.lucky_Sign_animation05_1 h3 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.lucky_result05_1 {
+    position: absolute;
+    right: 0;
+}
+
+.lucky_Poetry06 {
+    width: 300px;
+}
+
+.lucky_Poetry06 img {
+    width: 100%;
+}
+
+.lucky_content06 {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin-left: 60px;
+    margin-right: 0px;
+}
+
+.lucky_result06 {
+    display: flex;
+    width: 350px;
+    justify-content: space-between;
+}
+
+.lucky_title06_1 {
+    display: flex;
+    flex-direction: row;
+    /* align-items:center; */
+    align-items: center;
+}
+
+.lucky_title06_2 {
+    background-color: #cc543a;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.lucky_title06_1 h4 {
+    font-weight: 600;
+}
+
+.lucky_title06_2 h5 {
+    color: #fff;
+    line-height: 65px;
+    font-size: 15px;
+    text-align: center;
+
+}
+
+.lucky_Commentary06 {
+    margin-bottom: 25px;
+}
+
+.lucky_Commentary06 p {
+    font-size: 20px;
+}
+
+.lucky_btn06 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+.lucky_button06 {
+    border-radius: 30px;
+    color: #fff;
+    background-color: #cc543a;
+    border-style: none;
+    width: fit-content;
+    padding: 8px 30px;
+    font-size: 18px;
+}
