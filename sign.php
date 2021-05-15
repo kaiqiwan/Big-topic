@@ -1,24 +1,27 @@
 <?php include __DIR__ . '/sign/head.php'; ?>
+<?php
+require __DIR__ . '/product/__connect_db.php';
+$sql = "SELECT * FROM `poetry` ORDER BY RAND() LIMIT 1";
+$row = $pdo->query($sql)->fetch();
+?>
 
 <body>
+    <?php include __DIR__ . '/sign/navber.php'; ?>
     <!-- ------------我是麵包屑------------->
     <div class="breadcrumb_style   backgroundimg_1">
         <div class="d-flex flex-wrap breadcrumb_style_1 ">
-            <a href="" class="astlyep">自己編輯路徑</a>
+            <a href="" class="astlyep">首頁</a>
             <!-- 共用雲端找箭頭icon-->
             <img src="./img/nav_arrow_right.svg">
-            <a href="" class="astlyep">自己編輯路徑2</a>
+            <a href="" class="astlyep">線上服務</a>
             <img src="./img/nav_arrow_right.svg">
-            <a href="" class="astlyep">自己編輯路徑3</a>
+            <a href="" class="astlyep">求籤</a>
         </div>
     </div>
     <!-- ------------------------------------------- -->
     <div class="lucky_contianer lucky_text">
         <div class="lucky_content01">
             <div class="item-group01">
-                <div class="lucky_txtAdd">
-                    <h6 class="lucky_Sign_order">線上求籤</h6>
-                </div>
                 <div class="lucky_Swipe_page">
                     <ul>
                         <li class="node1 stageColor"></li>
@@ -54,12 +57,11 @@
                                 <option value="god08">玄天上帝</option>
                                 <option value="god09">玉皇大帝</option>
                                 <option value="god10">城隍爺</option>
-                                <option value="god11">恩主呂洞賓</option>
                                 <option value="god12">財神</option>
                                 <option value="god13">藥師如來佛</option>
-                                <option value="god14">關勝太子平</option>
                                 <option value="god15">關聖帝君</option>
                             </select>
+                            <p id="pleaseSelect" style="visibility: hidden;">請選擇神明</p>
                         </div>
                         <div class="lucky_Request_signature">
                             <h3>求籤步驟</h3>
@@ -231,55 +233,44 @@
                     </div>
                 </section>
                 <section class="lucky_p4 nextstep">
-                    <p class="lucky_text15">15</p>
+
                     <div class="lucky_Sign_animation03">
+                        <p class="lucky_text15"><?= $row['sid'] ?></p>
                         <img src="./img/Lickbox-02.png" alt="">
                     </div>
                     <div class="lucky_result">
-                        <p>你抽到 第15籤<br>
-                            請點選"擲筊"向神明確認賜籤</p>
+                        <p>你抽到 第<?= $row['sid'] ?>籤<br>
+                            請擲筊向神明確認賜籤</p>
                     </div>
                 </section>
                 <section class="lucky_p5 nextstep">
-                    <div id="lucky_Sign_animation05_1" class="lucky_Sign_animation05_1">
-                        <!-- <div class="lucky_Sign_animation05_1">
+                    <div class="extra">
+                        <div class="lucky_Sign_animation05_0 d-none">
                             <div id="YanCup"></div>
-                            <div id="YanCup_1"></div>
-                            <div id="YanCup_2"></div>
-                            <div id="YanCup_3"></div>
-                        </div> -->
-                    </div>
-                    <div id="lucky_result05_1" class="lucky_result05_1">
+                            <div id="YanCup_1" class="hidden"></div>
+                            <div id="YanCup_2" class="hidden"></div>
+                        </div>
+                        <div id="lucky_Sign_animation05_1" class="lucky_Sign_animation05_1">
+                        </div>
+                        <div id="lucky_result05_1" class="lucky_result05_1">
+                        </div>
                     </div>
                 </section>
                 <section class="lucky_p6 nextstep">
                     <div class="lucky_Poetry06">
-                        <img src="./img/Sign poems-15.png" alt="">
+                        <img src="./img/sign/<?= $row['img1'] ?>" alt="">
                     </div>
                     <div class="lucky_content06">
                         <div class="lucky_result06">
                             <div class="lucky_title06_1">
-                                <h4>第 15 籤&emsp;丙辰籤</h4>
+                                <h4><?= $row['Lot_number'] ?>&emsp;<?= $row['signature'] ?></h4>
                             </div>
                             <div class="lucky_title06_2">
-                                <h5>上上籤</h5>
+                                <h5><?= $row['grade'] ?></h5>
                             </div>
                         </div>
                         <div class="lucky_Commentary06">
-                            <p>跟太公的遭遇一樣，請不
-                                必多問，還是勸你學學姜太公的作法，且等待
-                                那運氣亨通時。
-                                <br> <br>
-                                抽到此籤，表示目前做事，總不如意，但別灰
-                                心，這不是因你不努力，而是時機未到。目
-                                前，最重要的是充實你自己，只要真才實幹，
-                                必有重用你的時候，決不會被埋沒的！
-                                <br><br>
-                                問功名，不必急尋，你是屬於大器晚成型。問
-                                移居或職位變動，還不是時機，一動不如一
-                                靜。出外旅行，無利可圖。問訴訟，以和為
-                                貴。問婚姻，多屬晚婚，應下定決心，婚談可
-                                成。
+                            <p><?= $row['content'] ?>
                             </p>
                         </div>
                         <div class="lucky_btn06">
@@ -291,18 +282,18 @@
             </div>
             <div class="lucky_button01">
                 <button class="lucky_p1">下一步</button>
-                <button class="lucky_p2 nextstep">下二步</button>
-                <button class="lucky_p3 nextstep">下3步</button>
-                <button class="lucky_p4 nextstep">下4步</button>
-                <button class="lucky_p5 nextstep">下5步</button>
+                <button class="lucky_p2 nextstep">下一步</button>
+                <button class="lucky_p3 nextstep">下一步</button>
+                <button class="lucky_p4 nextstep">下一步</button>
+                <button class="lucky_p5 nextstep">下一步</button>
                 <!-- <button class="lucky_p6 nextstep">下51步</button> -->
             </div>
             <div class="lucky_GodImg">
-                <img src="./img/Gods/god00/god01.png" alt="">
+                <img src="./img/god01.png" alt="">
             </div>
         </div>
     </div>
-    <?php include __DIR__ . '/sign/navber.php'; ?>
+
     <?php include __DIR__ . '/sign/footer.php'; ?>
     <?php include __DIR__ . '/sign/script.php'; ?>
 </body>

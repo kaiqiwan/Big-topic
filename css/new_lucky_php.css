@@ -1,14 +1,119 @@
+* {
+    background-size: contain !important;
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+#YanCup {
+    animation-name: YanCup;
+    animation-duration: 0.8s;
+    width: 170px;
+    height: 160px;
+    animation-iteration-count: 1;
+    background: url("../img/cup-0-1.png") no-repeat;
+    animation-fill-mode: forwards;
+    transition-timing-function: cubic-bezier(0.1, 0.1, 0.25, 1);
+}
+
+#YanCup_1 {
+    animation-name: YanCup01;
+    animation-duration: 3s;
+    width: 170px;
+    height: 160px;
+    animation-iteration-count: 1;
+    background: url("../img/cup-2.png") no-repeat;
+    opacity: 1;
+    animation-fill-mode: forwards;
+}
+
+#YanCup_2 {
+    animation-name: YanCup02;
+    animation-duration: 3s;
+    width: 170px;
+    height: 160px;
+    animation-iteration-count: 1;
+    background: url("../img/cup-1.png") no-repeat;
+    transform-origin: bottom right;
+    opacity: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes YanCup {
+    0% {
+        transform: translate(150%, -40%);
+    }
+
+    100% {
+        transform: translate(150%, 180%);
+    }
+}
+
+@keyframes YanCup01 {
+    0% {
+        transform: translate(270%, 10%) rotate(-30deg);
+    }
+
+    25% {
+        transform: translate(270%, 60%) rotate(-30deg);
+    }
+
+    50% {
+        background: url("../img/cup-2.png") no-repeat;
+        transform: translate(300%, 20%) rotate(-30deg);
+        opacity: 1;
+    }
+
+    75% {
+        background: url("../img/cup-01.png") no-repeat;
+        transform: translate(270%, 10%) rotate(-20deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        background: url("../img/cup-2.png") no-repeat;
+        transform: translate(270%, 0%) rotate(-40deg);
+        opacity: 1;
+    }
+
+
+}
+
+@keyframes YanCup02 {
+    0% {
+        transform: translate(120%, -60%) rotate(30deg);
+    }
+
+    25% {
+        transform: translate(120%, 0%) rotate(30deg);
+    }
+
+    50% {
+        background: url("../img/cup-1.png") no-repeat;
+        transform: translate(50%, -30%) rotate(30deg);
+        opacity: 1;
+    }
+
+    75% {
+        background: url("../img/cup-02.png") no-repeat;
+        transform: translate(60%, -40%) rotate(40deg);
+        opacity: 0.5;
+    }
+
+    100% {
+        background: url("../img/cup-1.png") no-repeat;
+        transform: translate(70%, -50%)rotate(30deg);
+        opacity: 1;
+    }
+}
 body {
     font-family: 'Faustina', serif;
-    background-image: url(../img/background/bcc.png);
-    height: 100vh;
+    background-image: url(/img/nav_bcc.png);
     position: relative;
-    
+    height: 100vh;
 }
-ul{
-    list-style-type: none;
-   
-}
+
 h2 {
     font-size: 35px;
     font-weight: bold;
@@ -52,7 +157,6 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    list-style-type: none;
 }
 
 .lucky_Swipe_page li {
@@ -67,7 +171,7 @@ p {
 
 .lucky_contianer {
     margin: 0;
-    padding: 30px 0 0 80px;
+    padding: 0 0 0 80px;
     height: 80%;
     /* overflow: hidden; */
 }
@@ -107,7 +211,7 @@ p {
 .lucky_p1,
 .lucky_Search_gods {
     width: 100%;
-    padding-top: 5vh;
+    padding-top: 2vh;
     display: flex;
     flex-direction: column;
 }
@@ -123,7 +227,7 @@ p {
     position: absolute;
     top: 0;
     width: 100%;
-    padding-top: 5vh;
+    padding-top: 2vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,21 +248,23 @@ p {
     position: absolute;
     top: 0;
     width: 100%;
-    padding-top: 5vh;
+    padding-top: -1vh;
 }
+
 /* 筊 */
 .lucky_p5{
     position: absolute;
     top: 0;
     width: 100%;
     padding-top: 15vh;
+    margin: 0 auto;
 }
 
 .lucky_p6 {
     position: absolute;
     top: 0;
     width: 100%;
-    padding-top: 7vh;
+    padding-top: 4vh;
     display: flex;
     flex-direction: row;
     text-align: justify;
@@ -257,7 +363,6 @@ option {
 .lucky_GodImg {
     width: 30%;
     height: 100%;
-    z-index: -1;
     overflow: hidden;
     position: relative;
 }
@@ -267,30 +372,38 @@ option {
     object-fit: contain;
     opacity: 0.5;
     position: absolute;
+    z-index: 2;
     right: 0;
-    transform: translateY(5%);
+    /* transform: translateY(-4%); */
 }
 .lucky_p3 img{
     animation-name: shaking;
-    animation-duration:1s;
+    animation-duration:1.6s;
     transform-origin: bottom;
     animation-iteration-count:infinite;
-
 }
 
 @keyframes shaking{
     0% {
-        transform: translateY(0%); }
+        transform: translateY(0); }
+    10% {
+        transform: translateY(-20%); }
     20% {
-        transform: translateY(-25%); }
+        transform: translateY(0%);}
+    30% {
+        transform: translateY(-20%); }
     40% {
         transform: translateY(0%);}
+    50% {
+        transform: rotate(-10deg);}      
     60% {
-        transform: translateY(-25%); }
+        transform: rotate(10deg);}      
+    70% {
+        transform: rotate(-10deg);}
     80% {
-        transform: rotate(30deg);}
+        transform: rotate(10deg);}        
     100% {
-        transform: rotate(-30deg);}
+        transform: rotate(0);}      
 }
 
 
@@ -304,7 +417,7 @@ option {
 }
 
 .lucky_text15 {
-    transform: translate(105px, 80px);
+    transform: translate(102px, 130px);
     color: #fff;
 }
 
@@ -322,9 +435,7 @@ option {
 .lucky_Sign_animation05_1 img {
     width: 100%;
     transform: rotate(-30deg);
-
 }
-
 
 .lucky_Sign_animation05_1 h3 {
     position: absolute;
@@ -383,10 +494,6 @@ option {
 
 }
 
-.lucky_Commentary06 {
-    margin-bottom: 25px;
-}
-
 .lucky_Commentary06 p {
     font-size: 18px;
 }
@@ -421,7 +528,6 @@ option {
     flex-direction: column;
     align-items: center;
     transition: 2s;
-    
 }
 
 .pic {
@@ -463,14 +569,11 @@ option {
     box-shadow: none;
     cursor: pointer;
 }
-/* ---求籤動畫---- */
 .lucky_contianer05_1 {
     margin: 0;
     padding: 130px 0px 0px 190px;
     display: flex;
     justify-content: space-between;
-
-
 }
 
 .lucky_content05_1 {
@@ -481,39 +584,18 @@ option {
     align-items: center;
     width: 100%;
     height: 100vh;
-
-}
-
-
-.item-group05_1 {
-    /* border: 1px solid rgba(0, 64, 255, 0.952);  */
 }
 
 .item-group05_1 h6 {
     margin-bottom: 50px;
-
 }
-
-
-
 
 .lucky_result05_1 {
     position: relative;
     width: 230px;
     left: 630px;
-    /* transform: translateY(120px); */
-    /* border: 1px solid rgba(0, 64, 255, 0.952); */
 }
 
-.lucky_result05_1 p {
-    /* right: 0; */
-    /* top: 130px; */
-
-}
-
-.lucky_result05_1 h3 {
-    /* transform: translate(-190px, -100px); */
-}
 
 /* 跳轉按鈕 */
 .lucky_button05_1 {
@@ -533,199 +615,40 @@ option {
 .wishes .btn_09{
     display: none;
 }
-/* --------求籤動畫-桌機----------- */
-.lucky_Sign_animation05_1 {}
+@media screen and (min-width: 1000px) {
 
-#YanCup {
-
-    animation-name: YanCup;
-    animation-duration: 0.8s;
-    width: 170px;
-    height: 160px;
-    animation-iteration-count: 1;
-    transform: translate(50%, -40%);
-    background: url("./img/Cup/cup-0.png") no-repeat;
-    animation-fill-mode: forwards;
-
+.lucky_contianer {
+    padding: 30px 0 0 80px;
 }
-
-#YanCup_1 {
-    animation-name: YanCup01;
-    animation-duration: 3s;
-    width: 170px;
-    height: 160px;
-    animation-iteration-count: 1;
-    background: url("./img/Cup/cup-2.png") no-repeat;
-    transform: translate(170%, 10%) rotate(-30deg);
-    opacity: 1;
-    visibility: hidden;
-    animation-fill-mode: forwards;
+#quest h4 {
+    margin-bottom: 30px;
 }
-
-#YanCup_2 {
-    animation-name: YanCup02;
-    animation-duration: 3s;
-    width: 170px;
-    height: 160px;
-    animation-iteration-count: 1;
-    background: url("./img/Cup/cup-1.png") no-repeat;
-    transform: translate(20%, -70%) rotate(30deg);
-    transform-origin: bottom right;
-    opacity: 1;
-    visibility: hidden;
-    animation-fill-mode: forwards;
-
+.item-group01 {
+    margin-left: 70px;
+    width: 100px;
 }
-
-#YanCup_3 {
-    animation-name: YanCup03;
-    animation-duration: 3s;
-    width: 270px;
-    height: 160px;
-    animation-iteration-count: 1;
-    background: url("./img/Cup/Yan\ Cup-01-1.png") no-repeat;
-    transform-origin: bottom left;
-    transform: translate(50%, 0%);
-    opacity: 1;
-    animation-fill-mode: forwards;
-    visibility: hidden;
-
-
+.lucky_God_speaks h5 {
+    padding-left: 50px;
 }
-
-.show {
-    visibility: hidden;
+select {
+    font-size: 22px;
 }
-
-@keyframes YanCup {
-    0% {
-        background: url("./img/Cup/cup-0.png") no-repeat;
-        transform: translate(50%, -40%);
-    }
-
-    100% {
-        background: url("./img/Cup/cup-0.png") no-repeat;
-        transform: translate(50%, 30%);
-
-    }
+.lucky_Commentary06 p{
+    line-height: 30px;
+    font-size: 18px;
 }
-
-@keyframes YanCup01 {
-    0% {
-        background: url("./img/Cup/cup-2.png") no-repeat;
-        opacity: 1;
-        transform: translate(170%, 10%) rotate(-30deg);
-
-
-    }
-
-    25% {
-        background: url("./img/Cup/cup-2.png") no-repeat;
-        transform: translate(170%, 70%) rotate(-30deg);
-        opacity: 1;
-
-
-    }
-
-    50% {
-        background: url("./img/Cup/cup-2.png") no-repeat;
-        transform: translate(200%, 100%) rotate(-30deg);
-        opacity: 1;
-
-
-
-    }
-
-    75% {
-        background: url("./img/Cup/cup-01.png") no-repeat;
-        transform: translate(170%, 80%) rotate(-20deg);
-        opacity: 0.5;
-
-    }
-
-    100% {
-        background: url("./img/Cup/cup-2.png") no-repeat;
-        transform: translate(170%, 50%) rotate(-40deg);
-        opacity: 1;
-        background-size: contain;
-
-    }
-
-
+.lucky_btn06 button{
+    font-size: 20px;
 }
-
-@keyframes YanCup02 {
-    0% {
-        background: url("./img/Cup/cup-1.png") no-repeat;
-        transform: translate(20%, -70%) rotate(30deg);
-        opacity: 1;
-        background-size: contain;
-    }
-
-    25% {
-        background: url("./img/Cup/cup-1.png") no-repeat;
-        transform: translate(-20%, -5%) rotate(30deg);
-        opacity: 1;
-
-    }
-
-    50% {
-        background: url("./img/Cup/cup-1.png") no-repeat;
-        transform: translate(-50%, 60%) rotate(30deg);
-        opacity: 1;
-
-    }
-
-    75% {
-        background: url("./img/Cup/cup-02.png") no-repeat;
-        transform: translate(-40%, 50%) rotate(40deg);
-        opacity: 0.5;
-
-    }
-
-    100% {
-        background: url("./img/Cup/cup-1.png") no-repeat;
-        transform: translate(-30%, 20%)rotate(30deg);
-        opacity: 1;
-
-    }
-
-
-}
-
-@keyframes YanCup03 {
-    0% {
-        background: url("./img/Cup/Yan\ Cup-01-1.png") no-repeat;
-        transform: translate(50%, 0%);
-        opacity: 0;
-
-    }
-
-    50% {
-        background: url("./img/Cup/Yan\ Cup-01-1.png") no-repeat;
-        transform: translate(50%, 20%);
-        opacity: 0.5;
-
-    }
-
-    100% {
-        background: url("./img/Cup/Yan\ Cup-01-1.png") no-repeat;
-        transform: translate(50%, 20%);
-        opacity: 1;
-
-    }
-
 }
 /* ---------手機------ */
 @media screen and (max-width: 1000px) {
-ul{
-        list-style-type: none;
-       
-}
 h5{
     font-size: 18px;
 }
-
+.lucky_Sign_order{
+    margin-top: 20px;
+}
 .lucky_Request_signature h3,.lucky_Request_signature p{
     font-size: 16px;
 }
@@ -735,6 +658,7 @@ h5{
 .lucky_contianer{
     padding: 0;
 }
+
 .item-group01{
     margin: 0;
     width: 50px;
@@ -752,6 +676,11 @@ h5{
 .lucky_round{
     opacity: 0.7;
 }
+.lucky_Search_gods {
+    padding: 20px 0;
+    height: 50px;
+}
+
 .lucky_right {
     width: 95%;
     align-self: flex-start;
@@ -760,14 +689,26 @@ h5{
     font-size: 16px;
 }
 .lucky_button01 {
-    bottom: 7%;
+    bottom: 22%;
+}
+
+select{
+    font-size: 18px;
 
 }
+.lucky_p2{
+    padding: 0;
+}
 .lucky_button01 .lucky_p2{
-    min-width:140px;
-    transform: translate(20%,-150%);
-
-
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transform: translate(170%,-80%);
+    padding: 0;
+    /* background-image: url(/img/arrow-down-solid.svg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
 }
 .lucky_Swipe_page li{
     width: 10px;
@@ -777,7 +718,20 @@ h5{
 .lucky_content01 {
     justify-content: center;
 }
+#quest {
+    margin:0;
+}
 
+#quest h4{
+    font-size: 20px;
+    margin: 0;
+}
+
+#quest p{
+    line-height: unset;
+    margin: 0;
+
+}
 .wishes{
     width: 95%;
 }
@@ -799,6 +753,11 @@ h5{
 .wishes button{
     padding: 10px;
 }
+.lucky_text15 {
+    transform: translate(57px, 90px);
+    font-size: 15px;
+    color:white;
+}
 .lucky_p3,.lucky_p4 {
     height: 80%;
     padding-top: 0;
@@ -806,10 +765,12 @@ h5{
     transform: translateX(-10px);
 }
 .lucky_p4{
-    padding-top: 10vh;
+    padding-top: 3vh;
 }
-
-.lucky_p4 p, .lucky_result05_1{
+.lucky_p4 .lucky_result{
+    justify-content: center;
+}
+.lucky_p4 .lucky_result p, .lucky_result05_1{
     position: unset;
     text-align: center;
     transform: translateY(130%);
@@ -821,7 +782,13 @@ h5{
 .lucky_button01 .lucky_p3,
 .lucky_button01 .lucky_p4,
 .lucky_button01 .lucky_p5{
-    transform: translateY(-200%);
+    transform: translate(25%,-130%);
+}
+
+.lucky_p5 .extra{
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: column;
 }
 
 .lucky_p6 {
@@ -829,6 +796,7 @@ h5{
     flex-direction: column;
     align-items: center;
     overflow: scroll;
+    padding-bottom: 100px;
 }
 
 .lucky_content06 {
@@ -842,13 +810,19 @@ h5{
     width: 100%;
     margin: 20px 0;
 }
+.lucky_btn06{
+    padding: 0;
+}
+.lucky_btn06 button{
+    padding: 10px 15px;
+}
+
 /* ------------求籤動畫-------- */
 .lucky_contianer05_1 {
     margin: 0;
     padding: 130px 0px 0px 190px;
     display: flex;
     justify-content: space-between;
-
 
 }
 
@@ -867,16 +841,9 @@ h5{
 
 }
 
-.lucky_result05_1 {
-    position: relative;
-    width: 210px;
-    transform: translateY(120px);
-}
-
 .lucky_result05_1 p {
     right: 0;
     top: 130px;
-
 }
 
 .lucky_result05_1 h3 {
@@ -895,119 +862,76 @@ h5{
     font-size: 20px;
 
 }
-
-/* ------------ */
-/* 求籤動畫 */
-.lucky_Sign_animation05_1 {}
-
 #YanCup {
-
+    margin:auto;
     animation-name: YanCup;
-    animation-duration: 3s;
-    width: 170px;
-    height: 160px;
+    animation-duration: 0.8s;
+    width: 70px;
+    height: 60px;
     animation-iteration-count: 1;
-    transform: translate(50%, -40%);
-    background: url("./img/Cup/cup-0.png") no-repeat;
+    background: url("../img/cup-0-1.png") no-repeat;
     animation-fill-mode: forwards;
+    transition-timing-function: cubic-bezier(0.1, 0.1, 0.25, 1);
 }
 
 #YanCup_1 {
     animation-name: YanCup01;
     animation-duration: 3s;
-    animation-delay: 3s;
-    width: 170px;
-    height: 160px;
-    top: -150px;
+    width: 100px;
+    height: 100px;
     animation-iteration-count: 1;
-    background: url("./img/Cup/cup-2.png") no-repeat;
-    transform: translate(170%, 10%) rotate(-30deg);
-    left: 150px;
+    background: url("../img/cup-2.png") no-repeat;
     opacity: 1;
-    visibility: hidden;
     animation-fill-mode: forwards;
 }
 
 #YanCup_2 {
-
     animation-name: YanCup02;
-    animation-duration: 1.5s;
-    animation-delay: 3s;
-    width: 170px;
-    height: 160px;
+    animation-duration: 3s;
+    width: 100px;
+    height: 100px;
     animation-iteration-count: 1;
-    background: url("./img/Cup/cup-1.png") no-repeat;
-    transform: translate(20%, -70%) rotate(30deg);
+    background: url("../img/cup-1.png") no-repeat;
     transform-origin: bottom right;
     opacity: 1;
-    visibility: hidden;
     animation-fill-mode: forwards;
-}
-
-#YanCup_3 {
-    animation-name: YanCup03;
-    animation-duration: 3s;
-    width: 270px;
-    height: 160px;
-    animation-iteration-count: 1;
-    background: url("./img/Cup/Yan\ Cup-01-1.png") no-repeat;
-    transform-origin: bottom left;
-    transform: translate(50%, 0%);
-    opacity: 1;
-    animation-fill-mode: forwards;
-    visibility: hidden;
-
 }
 
 @keyframes YanCup {
     0% {
-        background: url("./img/Cup/cup-0.png") no-repeat;
-        transform: translate(50%, -40%);
+        transform: translate(-30%, -40%);
     }
 
-    10% {
-        background: url("./img/Cup/cup-0.png") no-repeat;
-        transform: translate(50%, 30%);
-
-    }
-
-    20% {
-        background: url("./img/Cup/cup-0.png") no-repeat;
-        transform: translate(50%, 30%);
-
-
+    100% {
+        transform: translate(-30%, 180%);
     }
 }
 
 @keyframes YanCup01 {
     0% {
-        background: url("./img/Cup/cup-2.png") no-repeat;
-        opacity: 1;
-        transform: translate(140%, 10%) rotate(-30deg);
- 
-
+        transform: translate(170%, 10%) rotate(-30deg);
     }
 
     25% {
-        background: url("./img/Cup/cup-2.png") no-repeat;
-        transform: translate(150%, 70%) rotate(-30deg);
-        opacity: 1;
+        transform: translate(170%, 60%) rotate(-30deg);
     }
 
     50% {
-        background: url("./img/Cup/cup-2.png") no-repeat;
-        transform: translate(160%, 100%) rotate(-30deg);
+        background: url("../img/cup-2.png") no-repeat;
+        transform: translate(200%, 20%) rotate(-30deg);
+        opacity: 1;
+    }
+
+    75% {
+        background: url("../img/cup-01.png") no-repeat;
+        transform: translate(200%, 10%) rotate(-20deg);
         opacity: 0.5;
     }
 
-
-
     100% {
-        background: url("./img/Cup/cup-2.png") no-repeat;
-        transform: translate(170%, 80%) rotate(-30deg);
+        background: url("../img/cup-2.png") no-repeat;
+        transform: translate(200%, 0%) rotate(-40deg);
         opacity: 1;
-        background-size: contain;
-
     }
 
 
@@ -1015,59 +939,29 @@ h5{
 
 @keyframes YanCup02 {
     0% {
-        background: url("./img/Cup/cup-1.png") no-repeat;
-        transform: translate(5%, -70%) rotate(30deg);
-        opacity: 1;
-        background-size: contain;
+        transform: translate(70%, -60%) rotate(30deg);
     }
 
     25% {
-        background: url("./img/Cup/cup-1.png") no-repeat;
-        transform: translate(-10%, -5%) rotate(30deg);
-        opacity: 1;
-
+        transform: translate(70%, 0%) rotate(30deg);
     }
 
     50% {
-        background: url("./img/Cup/cup-1.png") no-repeat;
-        transform: translate(-15%, 60%) rotate(30deg);
-        opacity: 0.5;
-
-    }
-
-
-
-    100% {
-        background: url("./img/Cup/cup-1.png") no-repeat;
-        transform: translate(-20%, 20%)rotate(30deg);
+        background: url("../img/cup-1.png") no-repeat;
+        transform: translate(0%, -30%) rotate(30deg);
         opacity: 1;
-
     }
 
-
-}
-
-@keyframes YanCup03 {
-    0% {
-        background: url("./img/Cup/Yan\ Cup-01-1.png") no-repeat;
-        transform: translate(25%, 0%);
-        opacity: 0;
-
-    }
-
-    50% {
-        background: url("./img/Cup/Yan\ Cup-01-1.png") no-repeat;
-        transform: translate(25%, 20%);
+    75% {
+        background: url("../img/cup-02.png") no-repeat;
+        transform: translate(10%, -40%) rotate(40deg);
         opacity: 0.5;
-
     }
 
     100% {
-        background: url("./img/Cup/Yan\ Cup-01-1.png") no-repeat;
-        transform: translate(25%, 20%);
+        background: url("../img/cup-1.png") no-repeat;
+        transform: translate(20%, -50%)rotate(30deg);
         opacity: 1;
-
     }
-
 }
 }
