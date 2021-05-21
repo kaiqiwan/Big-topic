@@ -147,7 +147,7 @@ $('.lucky_button01 .lucky_p4').click(function () {
         $('.lucky_Sign_animation05_0').addClass('d-none');
         $('.lucky_Sign_animation05_1').removeClass('d-none')
         $('.lucky_result05_1').removeClass('d-none');
-        document.getElementById("lucky_result05_1").append("擲筊次數：" + failure);
+        document.getElementById("lucky_result05_1").innerHTML = "擲筊次數：" + failure;
         $('#YanCup_1').css('visibility', 'hidden');
         $('#YanCup_2').css('visibility', 'hidden');
         $('#YanCup').css('visibility', 'visible');
@@ -167,6 +167,7 @@ function lucky() {
     }
     getRandomImage()
     console.log(please[luckyNum].name)
+
 }
 let failure = 1
 $('.lucky_button01 .lucky_p5').click(function () {
@@ -177,10 +178,30 @@ $('.lucky_button01 .lucky_p5').click(function () {
         $('.lucky_Swipe_page p').text('06');
     } else {
         // lucky();
-        // failure++;
+        failure++;
+
         $('.lucky_p3').removeClass('nextstep')
         $('.lucky_p4').addClass('nextstep')
         $('.lucky_p5').addClass('nextstep')
+
+        $.get(
+            'sign-api.php',
+            function (data) {
+                console.log('data', data);
+                console.log(`你抽到 第${data.sid}籤<br>
+                請擲筊向神明確認賜籤`);
+                console.log(`${data.Lot_number}&emsp;${data.signature}`);
+                $('.lucky_result p').html(`你抽到 第${data.sid}籤<br>
+               請擲筊向神明確認賜籤`)
+                $('.lucky_Sign_animation03 p').html(`${data.sid}`)
+                $('.lucky_title06_1 h4').html(`${data.Lot_number}&emsp;${data.signature}`)
+                $('.lucky_title06_2 h5').html(`${data.grade}`)
+                $('.lucky_Commentary06 p').html(`${data.content}`)
+            }
+            , 'json'
+        )
+
+
         // document.getElementById("lucky_result05_1").innerHTML.replace("擲筊次數：" + failure);
 
     }

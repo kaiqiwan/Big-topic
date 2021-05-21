@@ -1,4 +1,4 @@
-<?php include __DIR__ . '/sign/head.php'; ?>
+
 <?php
 require __DIR__ . '/product/__connect_db.php';
 $sql = "SELECT * FROM `poetry` ORDER BY RAND() LIMIT 1";
