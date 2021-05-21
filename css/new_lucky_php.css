@@ -109,7 +109,7 @@
 }
 body {
     font-family: 'Faustina', serif;
-    background-image: url(/img/nav_bcc.png);
+    background-image: url(../img/bcc.png);
     position: relative;
     height: 100vh;
 }
@@ -440,7 +440,7 @@ option {
 .lucky_Sign_animation05_1 h3 {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 30%;
     transform: translate(-50%, -50%);
 }
 
