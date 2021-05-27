@@ -183,30 +183,72 @@ $('.lucky_button01 .lucky_p5').click(function () {
         $('.lucky_p3').removeClass('nextstep')
         $('.lucky_p4').addClass('nextstep')
         $('.lucky_p5').addClass('nextstep')
-
+        // $('.lucky_btn06 .lucky_Favorites').click(function (data) {
         $.get(
             'sign-api.php',
             function (data) {
+                console.log('data.sid: ' + data.sid);
                 console.log('data', data);
                 console.log(`你抽到 第${data.sid}籤<br>
-                請擲筊向神明確認賜籤`);
+                    請擲筊向神明確認賜籤`);
                 console.log(`${data.Lot_number}&emsp;${data.signature}`);
+                $('.lucky_p6').attr('data-sid', data.sid);
                 $('.lucky_result p').html(`你抽到 第${data.sid}籤<br>
-               請擲筊向神明確認賜籤`)
-                $('.lucky_Sign_animation03 p').html(`${data.sid}`)
-                $('.lucky_title06_1 h4').html(`${data.Lot_number}&emsp;${data.signature}`)
-                $('.lucky_title06_2 h5').html(`${data.grade}`)
-                $('.lucky_Commentary06 p').html(`${data.content}`)
+                   請擲筊向神明確認賜籤`);
+                $('.lucky_Sign_animation03 p').html(`${data.sid}`);
+                $('.lucky_title06_1 h4').html(`${data.Lot_number}&emsp;${data.signature}`);
+                $('.lucky_title06_2 h5').html(`${data.grade}`);
+                $('.lucky_Commentary06 p').html(`${data.content}`);
             }
             , 'json'
-        )
 
+
+        )
+        // }
 
         // document.getElementById("lucky_result05_1").innerHTML.replace("擲筊次數：" + failure);
 
     }
 
 })
+
+// $('.lucky_btn06 .lucky_Favorites').click(function (data) {
+//     if (please[luckyNum].name == '聖筊') {
+//         $('.lucky_p6').removeClass('nextstep');
+//         $('.lucky_p5').addClass('nextstep');
+//         $('.node6').addClass('stageColor').siblings().removeClass('stageColor');
+//         $('.lucky_Swipe_page p').text('06');
+//     } else {
+//         // lucky();
+//         failure++;
+
+//         $('.lucky_p3').removeClass('nextstep')
+//         $('.lucky_p4').addClass('nextstep')
+//         $('.lucky_p5').addClass('nextstep')
+
+//         $.get(
+//             'sign-api.php',
+//             function (data) {
+//                 console.log('data', data);
+//                 console.log(`你抽到 第${data.sid}籤<br>
+//                 請擲筊向神明確認賜籤`);
+//                 console.log(`${data.Lot_number}&emsp;${data.signature}`);
+//                 $('.lucky_result p').html(`你抽到 第${data.sid}籤<br>
+//                請擲筊向神明確認賜籤`)
+//                 $('.lucky_Sign_animation03 p').html(`${data.sid}`)
+//                 $('.lucky_title06_1 h4').html(`${data.Lot_number}&emsp;${data.signature}`)
+//                 $('.lucky_title06_2 h5').html(`${data.grade}`)
+//                 $('.lucky_Commentary06 p').html(`${data.content}`)
+//             }
+//             , 'json'
+//         )
+
+
+//         // document.getElementById("lucky_result05_1").innerHTML.replace("擲筊次數：" + failure);
+
+//     }
+
+// })
 //判斷是否為聖筊
 // $('lucky_result05_1').addEventListener('click',luckyNum){
 //     if(please[luckyNum].name == '聖筊'){

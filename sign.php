@@ -256,7 +256,7 @@ $row = $pdo->query($sql)->fetch();
                         </div>
                     </div>
                 </section>
-                <section class="lucky_p6 nextstep">
+                <section class="lucky_p6 nextstep" data-sid="<?= $row['sid'] ?>">
                     <div class="lucky_Poetry06">
                         <img src="./img/sign/<?= $row['img1'] ?>" alt="">
                     </div>
@@ -274,7 +274,7 @@ $row = $pdo->query($sql)->fetch();
                             </p>
                         </div>
                         <div class="lucky_btn06">
-                            <button class="lucky_button06">收藏此籤</button>
+                            <button class="lucky_button06 lucky_Favorites">收藏此籤</button>
                             <button class="lucky_button06">拜訪神明</button>
                         </div>
                     </div>

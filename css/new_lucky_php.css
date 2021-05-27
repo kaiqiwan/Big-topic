@@ -440,7 +440,7 @@ option {
 .lucky_Sign_animation05_1 h3 {
     position: absolute;
     left: 50%;
-    top: 30%;
+    top: 40%;
     transform: translate(-50%, -50%);
 }
 
@@ -640,6 +640,7 @@ select {
 .lucky_btn06 button{
     font-size: 20px;
 }
+
 }
 /* ---------手機------ */
 @media screen and (max-width: 1000px) {
@@ -649,7 +650,12 @@ h5{
 .lucky_Sign_order{
     margin-top: 20px;
 }
-.lucky_Request_signature h3,.lucky_Request_signature p{
+.lucky_Request_signature h3{
+    font-size: 16px;
+  
+}
+.lucky_Request_signature p{
+    margin-bottom: 3vh;
     font-size: 16px;
 }
 .lucky_GodImg{
@@ -816,7 +822,23 @@ select{
 .lucky_btn06 button{
     padding: 10px 15px;
 }
-
+.lucky_Sign_animation05_1 h3{
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+.lucky_button01 button{
+    height: fit-content;
+    border-radius: 30px;
+    color: #fff;
+    background-color: #cc543a;
+    border-style: none;
+    padding: 8px 40px;
+    font-size: 20px;
+    position: absolute;
+    margin-top: 2vh;
+}
 /* ------------求籤動畫-------- */
 .lucky_contianer05_1 {
     margin: 0;
